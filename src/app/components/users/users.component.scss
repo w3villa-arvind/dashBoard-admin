@@ -1,0 +1,42 @@
+.active span{
+    background-color: #83EB8F;
+    padding: 5px;
+    border-radius: 18px;
+
+  }
+  .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px; 
+      transform: translateY(-50%);
+      color: #aaa; 
+      pointer-events: none; 
+    }
+  
+    .filter-btn{
+      height: 43px;
+      padding: 0px 8px;
+      margin: 0px 9px;
+      border: 1px solid;
+      background-color: white;
+    }
+    .form-group{
+
+      .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        border: none;
+        margin: 8px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        color: #333;
+        font-size: 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .btn-submit-user{
+        background-color: #6ED5C6;
+      }
+      
+  }
