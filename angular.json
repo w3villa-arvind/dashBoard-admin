@@ -30,9 +30,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@mdi/font/css/materialdesignicons.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,12 +100,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@mdi/font/css/materialdesignicons.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bc1b1677-8b71-414e-b114-faf541d10a1a"
   }
 }

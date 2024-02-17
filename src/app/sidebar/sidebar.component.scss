@@ -1,0 +1,184 @@
+.sidebar {
+  position: fixed;
+  height: calc(100vh - 63px);
+  background: #ffffff;
+  font-family: "Poppins";
+  padding: 0;
+  overflow-y: auto;
+  width: 255px;
+  z-index: 11;
+  transition: width 0.25 ease, background 0.25 ease;
+  -webkit-transition: width 0.25 ease, background 0.25 ease;
+  -moz-transition: width 0.25 ease, background 0.25 ease;
+  -ms-transition: width 0.25 ease, background 0.25 ease;
+  .nav {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    .nav-item {
+      .collapse {
+        z-index: 999;
+      }
+      .collapse.show,
+      .collapsing {
+        background: #fafbfc;
+      }
+      .nav-link {
+        align-items: center;
+        display: flex;
+        padding: 16px 35px;
+        white-space: nowrap;
+        height: 52px;
+        color: #4a4a4a;
+        i {
+          &.menu-arrow {
+            margin-left: auto;
+            margin-right: 0;
+            transition-duration: 0.2s;
+            transition-property: transform;
+            transition-timing-function: ease-in;
+            &:before {
+              content: "\F142";
+              font-family: "Material Design Icons";
+              font-size: 18px;
+              line-height: 1;
+              font-style: normal;
+              vertical-align: middle;
+              color: rgba(#4a4a4a, 0.5);
+            }
+          }
+        }
+        &[aria-expanded="true"] {
+          background: #fafbfc;
+          i {
+            &.menu-arrow {
+              transform: rotate(90deg);
+            }
+          }
+        }
+        .menu-icon {
+          margin-right: 1.25rem;
+          width: 16px;
+          line-height: 1;
+          font-size: 18px;
+          color: lighten(#4a4a4a, 30%);
+          .rtl & {
+            margin-right: 0;
+            margin-left: 1.25rem;
+          }
+        }
+        .menu-title {
+          color: inherit;
+          display: inline-block;
+          font-size: 16px;
+          line-height: 1;
+          vertical-align: middle;
+        }
+        .badge {
+          margin-left: auto;
+        }
+        &:hover {
+          color: darken(#4a4a4a, 5%);
+        }
+        &.active {
+          .menu-title {
+            color: inherit;
+          }
+          i {
+            color: #6ed5c6;
+          }
+        }
+      }
+      &.nav-profile {
+        .nav-link {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          .user-wrapper {
+            display: flex;
+            margin-bottom: 30px;
+            .profile-image {
+              width: 208px;
+              height: 40px;
+              cursor: pointer;
+              img {
+                border-radius: 100%;
+                max-width: 100%;
+              }
+            }
+            .text-wrapper {
+              margin-left: 15px;
+              .rtl & {
+                margin-left: 0;
+                margin-right: 15px;
+              }
+              .profile-name {
+                font-weight: 500;
+                margin-bottom: 8px;
+              }
+              .designation {
+                margin-right: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:not(.sub-menu) {
+      > .nav-item {
+        &:hover {
+          &:not(.nav-profile) {
+            > .nav-link {
+              background: #fafbfc;
+              color: #4a4a4a;
+            }
+          }
+        }
+      }
+    }
+    &.sub-menu {
+      margin-bottom: 0;
+      padding: 0 0 0 4rem;
+      .nav-item {
+        .nav-link {
+          color: #4a4a4a;
+          padding: 0.75rem 1rem;
+          font-size: 12px;
+          line-height: 1;
+          height: auto;
+          &.active {
+            color: #308ee0;
+            background: transparent;
+            &:before {
+              background: #308ee0;
+            }
+          }
+        }
+        &:hover {
+          > .nav-link {
+            background: initial;
+            color: #000;
+            &:before {
+              background: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .sidebar-offcanvas{
+    position: fixed;
+    max-height: calc(100vh - 63px);
+    top: 63px;
+    bottom: 0;
+    overflow: auto;
+    left: -255px;
+    -webkit-transition: 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    &.active{
+        left: 0;
+    }
+  }
+}

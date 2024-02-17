@@ -1,0 +1,32 @@
+<nav class="sidebar sidebar-offcanvas" [ngClass]="{'active': getUserActive}" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item nav-profile">
+        <div class="nav-link">
+          <div class="user-wrapper">
+            <div class="profile-image">
+              <img class="cursor-pointer" src="assets/style/logo.png" alt="profile image" (click)="clearStorgae()">
+            </div>
+          </div>
+        </div>
+      </li>
+  
+      <li class="nav-item" *ngFor="let item of menuItems;">
+        <a class="nav-link" [routerLink]="item.name" routerLinkActive="active" (click)="openSubManu(item)">
+          <i class="menu-icon mdi {{item.icon}}"></i>
+          <span class="menu-title">{{item.text}}</span>
+        </a>
+        <span>
+          <div *ngIf="item.active">
+            <div class="sub-manu-nav" *ngFor="let sub of submenuData">
+              <a class="nav-link" [routerLink]="sub.name" routerLinkActive="active" *ngIf="sub.visible">
+                <i class="menu-icon mdi {{sub.icon}}"></i>
+                <span class="menu-title">{{sub.text}}</span>
+              </a>
+            </div>
+          </div>
+          
+        </span>
+      </li>
+    </ul>
+  </nav>
+  
