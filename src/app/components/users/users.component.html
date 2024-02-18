@@ -45,9 +45,9 @@
               <td >{{item.phone}}</td>
               <td class="status" ><span class="pending">{{item.role}}</span></td>
               <td class="active" ><span >Active</span></td>
-              <td *ngIf="!editOrDeleteElement " class="action" (click)="editOrDelete(i)">...</td>
+              <td *ngIf="!editOrDeleteElement " class="action cursor-pointer" (click)="editOrDelete(i)">...</td>
               <td *ngIf="editOrDeleteElement && i ===userIndex" class="action" ><span class="cursor-pointer editButton" (click)="editButton(item,'edit')">Edit</span>/ <span class="cursor-pointer deleteButton" (click)="deleteUserDataById(item.id)">Delete</span></td>
-              <td *ngIf="editOrDeleteElement && i !=userIndex" class="action" >...</td>
+              <td *ngIf="editOrDeleteElement && i !=userIndex" class="action cursor-pointer" >...</td>
             </tr>
           </tbody>
         </table>
